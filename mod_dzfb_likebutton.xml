@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" client="site" version="3.1" method="upgrade">
+    <name>mod_dzfb_likebutton</name>
+    <creationDate>July 2013</creationDate>
+    <author>DZ Team</author>
+    <authorEmail>dev@dezign.vn</authorEmail>
+    <authorUrl>dezign.vn</authorUrl>
+    <copyright>(C) 2013 DZ Creative Studio. All rights reserved.</copyright>
+    <version>1.0.0</version>
+    <description>MOD_DZFB_LIKEBUTTON_DESC</description>
+    
+    <files>
+        <filename>mod_dzfb_likebutton.xml</filename>
+        <filename module="mod_dzfb_likebutton">mod_dzfb_likebutton.php</filename>
+        <filename>index.html</filename>
+        <filename>helper.php</filename>
+        <filename>tmpl/default.php</filename>
+        <filename>tmpl/index.html</filename>
+    </files>
+    
+    <languages>
+        <!-- Any language files included with the module -->
+        <language tag="en-GB">en-GB.mod_dzfb_likebutton.ini</language>
+        <language tag="en-GB">en-GB.mod_dzfb_likebutton.sys.ini</language>
+        <language tag="vi-VN">vi-VN.mod_dzfb_likebutton.ini</language>
+        <language tag="vi-VN">vi-VN.mod_dzfb_likebutton.sys.ini</language>
+    </languages>
+    
+    <!-- Optional parameters -->
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field name="send" type="radio"
+                    default="1" class="btn-group"
+                    label="MOD_DZFB_LBL_SEND"
+                    description="MOD_DZFB_DESC_SEND">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="button_layout" type="list"
+                    default="standard"
+                    label="MOD_DZFB_LBL_LAYOUT"
+                    description="MOD_DZFB_DESC_LAYOUT">
+                    <option value="standard">MOD_DZFB_STANDARD</option>
+                    <option value="button_count">MOD_DZFB_BUTTON_COUNT</option>
+                    <option value="box_count">MOD_DZFB_BOX_COUNT</option>
+                </field>
+                <field name="width" type="text" filter="int" 
+                    class="validate-numeric" default="450"
+                    label="MOD_DZFB_LBL_WIDTH"
+                    description="MOD_DZFB_DESC_WIDTH" />
+                <field name="show_faces" type="radio" 
+                    default="1" class="btn-group"
+                    label="MOD_DZFB_LBL_SHOW_FACES"
+                    description="MOD_DZFB_DESC_SHOW_FACES">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="font" type="list"
+                    default="arial"
+                    label="MOD_DZFB_LBL_FONT"
+                    description="MOD_DZFB_DESC_FONT">
+                    <option value="arial">Arial</option>    
+                    <option value="lucida grande">Lucida Grande</option>
+                    <option value="segoe ui">Segoe UI</option>
+                    <option value="tahoma">Tahoma</option>
+                    <option value="trebuchet ms">Trebuchet MS</option>
+                    <option value="verdana">Verdana</option>
+                </field>
+                <field name="colorscheme" type="radio"
+                    default="light" class="btn-group"
+                    label="MOD_DZFB_LBL_COLORSCHEME"
+                    description="MOD_DZFB_DESC_COLORSCHEME">
+                    <option value="light">MOD_DZFB_LIGHT</option>
+                    <option value="dark">MOD_DZFB_DARK</option>
+                </field>
+                <field name="action" type="list"
+                    default="like"
+                    label="MOD_DZFB_LBL_ACTION"
+                    description="MOD_DZFB_DESC_ACTION">
+                    <option value="like">MOD_DZFB_LIKE</option>    
+                    <option value="recommend">MOD_DZFB_RECOMMEND</option>
+                </field>
+            </fieldset>
+            <fieldset name="advanced">
+                <field name="layout" type="modulelayout"
+                    label="JFIELD_ALT_LAYOUT_LABEL"
+                    description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+
+                <field name="moduleclass_sfx" type="textarea" rows="3"
+                    label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+                    description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+
+                <field name="cache" type="list"
+                    default="1"
+                    label="COM_MODULES_FIELD_CACHING_LABEL"
+                    description="COM_MODULES_FIELD_CACHING_DESC"
+                >
+                    <option value="1">JGLOBAL_USE_GLOBAL</option>
+                    <option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+                </field>
+
+                <field name="cache_time" type="text"
+                    default="900"
+                    label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+                    description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+                <field
+                    name="cachemode"
+                    type="hidden"
+                    default="static">
+                    <option
+                        value="static"></option>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
+</extension>
